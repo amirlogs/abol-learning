@@ -24,14 +24,15 @@ Browsers block **HTTPS pages** (e.g. Vercel) from calling plain HTTP APIs (mixed
 
 | Layer | Behavior |
 | --- | --- |
-| Vite / Vercel | `/abol-proxy/*` and `/api/*` → EC2 |
-| App | `caption-api="/abol-proxy"` + fetch rewrite for absolute EC2 VTT URLs |
+| Vite (local) | `/abol-proxy` + `/api` → local Compose (`127.0.0.1:8787`); `/abol-minio` → MinIO |
+| Vercel | `/abol-proxy` + `/api` → EC2; `/abol-minio` needs Caddy on the API host |
+| App | `caption-api="/abol-proxy"` + MinIO audio URL rewrite to `/abol-minio` |
 
 | Attribute / prop | Value |
 | --- | --- |
 | `caption-api` | `/abol-proxy` (default) |
 | `generate-captions` | `am om ti aa` |
-| Job listen | `audioSummaryApi` → `POST /api/job-summaries/audio` (unreachable MinIO URLs fall back to `/audio/*.mp3`) |
+| Job listen | `audioSummaryApi` + AssemblyAI MP3s via `abolAudioSummary` (`/audio/*.mp3`); `/abol-minio` proxy for live MinIO when available |
 
 ## Run
 

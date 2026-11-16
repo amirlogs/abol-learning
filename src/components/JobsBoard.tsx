@@ -66,9 +66,8 @@ export function JobsBoard() {
   return (
     <div className="jobs-board">
       <p className="hint" role="note">
-        Each notice includes a plain-language summary, listen control via{' '}
-        <code>audioSummaryApi</code> (<code>{abolApiOrigin}</code> →{' '}
-        <code>/api/job-summaries/audio</code>), key facts, and apply action.
+        Listen uses <code>audioSummaryApi</code> and original AssemblyAI summaries
+        (<code>abolAudioSummary</code>). Key facts and apply are on each card.
       </p>
 
       <div

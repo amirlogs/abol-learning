@@ -1,37 +1,45 @@
 import react from '@vitejs/plugin-react'
-import { defineConfig } from 'vite'
+import type { ProxyOptions } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
 
-// https://vite.dev/config/
-export default defineConfig({
-  plugins: [react()],
-  server: {
-    proxy: {
-      // Same-origin proxy so captions work even when the page is HTTPS (Vercel)
-      // or when the browser would otherwise block http://16.16.124.190.
-      '/abol-proxy': {
-        target: 'http://16.16.124.190',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/abol-proxy/, ''),
-      },
-      // Job-card strips audio-summary-api to `.origin`, then POSTs `/api/...`.
-      '/api': {
-        target: 'http://16.16.124.190',
-        changeOrigin: true,
+/**
+ * Dev proxies:
+ * - `/abol-proxy` + `/api` → Abol Kit API (local Compose by default)
+ * - `/abol-minio` → MinIO with Host `localhost:9000` (presigned URL requirement)
+ *
+ * Override targets with ABOL_API_PROXY_TARGET / ABOL_MINIO_ORIGIN.
+ * Vercel uses vercel.json → EC2 (and needs Caddy `/abol-minio` there).
+ */
+export default defineConfig(({ mode }) => {
+  const env = loadEnv(mode, process.cwd(), '')
+  const apiTarget = (env.ABOL_API_PROXY_TARGET || 'http://127.0.0.1:8787').replace(/\/+$/, '')
+  const minioTarget = (env.ABOL_MINIO_ORIGIN || 'http://127.0.0.1:9000').replace(/\/+$/, '')
+
+  const proxy: Record<string, ProxyOptions> = {
+    '/abol-proxy': {
+      target: apiTarget,
+      changeOrigin: true,
+      rewrite: (path) => path.replace(/^\/abol-proxy/, ''),
+    },
+    '/api': {
+      target: apiTarget,
+      changeOrigin: true,
+    },
+    '/abol-minio': {
+      target: minioTarget,
+      changeOrigin: false,
+      rewrite: (path) => path.replace(/^\/abol-minio/, ''),
+      configure: (proxyServer) => {
+        proxyServer.on('proxyReq', (proxyReq) => {
+          proxyReq.setHeader('host', 'localhost:9000')
+        })
       },
     },
-  },
-  preview: {
-    proxy: {
-      '/abol-proxy': {
-        target: 'http://16.16.124.190',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/abol-proxy/, ''),
-      },
-      '/api': {
-        target: 'http://16.16.124.190',
-        changeOrigin: true,
-      },
-    },
-  },
+  }
+
+  return {
+    plugins: [react()],
+    server: { proxy },
+    preview: { proxy },
+  }
 })
-

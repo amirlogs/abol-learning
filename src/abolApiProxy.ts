@@ -5,22 +5,17 @@
  *
  * Job-card uses `new URL(audio-summary-api).origin`, so `/abol-proxy` collapses
  * to the page origin and POSTs `/api/job-summaries/audio`. Vite/Vercel also
- * rewrite `/api` → EC2. TTS responses often return `http://localhost:9000/...`
- * (MinIO, not publicly reachable) — rewrite those to local demo MP3s so Listen
- * still plays after a successful API ensure call.
+ * rewrite `/api` → EC2.
+ *
+ * TTS responses return presigned MinIO URLs at `http://localhost:9000/...`
+ * (Compose binds MinIO to loopback; signatures require Host: localhost:9000).
+ * Rewrite those to same-origin `/abol-minio/...` so Vite/Vercel/Caddy can proxy
+ * the original AssemblyAI bytes with the Host header preserved.
  */
 const EC2_ORIGIN = 'http://16.16.124.190'
 const PROXY_PREFIX = '/abol-proxy'
-
-/** Fallback MP3s when the API returns an unreachable MinIO URL. */
-const LOCAL_JOB_AUDIO: Record<string, string> = {
-  'abol-learn:junior-a11y': '/audio/junior-a11y.mp3',
-  'abol-learn_junior-a11y': '/audio/junior-a11y.mp3',
-  'abol-learn:learning-content': '/audio/learning-content.mp3',
-  'abol-learn_learning-content': '/audio/learning-content.mp3',
-  'abol-learn:frontend-learning': '/audio/frontend-learning.mp3',
-  'abol-learn_frontend-learning': '/audio/frontend-learning.mp3',
-}
+const MINIO_PROXY_PREFIX = '/abol-minio'
+const MINIO_LOCAL_ORIGINS = ['http://localhost:9000', 'http://127.0.0.1:9000'] as const
 
 export function installAbolApiProxy(): void {
   if (typeof window === 'undefined') return
@@ -58,17 +53,16 @@ export function rewriteAbolUrl(url: string): string {
 
 async function maybeRewriteJobAudioResponse(url: string, response: Response): Promise<Response> {
   if (!response.ok) return response
-  if (!url.includes('/api/job-summaries/audio')) return response
+  if (!url.includes('/api/job-summaries/audio') && !url.includes('/api/job-summaries/')) {
+    return response
+  }
 
   const type = response.headers.get('content-type') ?? ''
   if (!type.includes('application/json')) return response
 
   try {
-    const body = (await response.clone().json()) as {
-      jobId?: string
-      audioUrl?: string
-    }
-    const nextUrl = playableJobAudioUrl(body.jobId, body.audioUrl)
+    const body = (await response.clone().json()) as { audioUrl?: string }
+    const nextUrl = rewriteMinioAudioUrl(body.audioUrl)
     if (!nextUrl || nextUrl === body.audioUrl) return response
 
     return new Response(JSON.stringify({ ...body, audioUrl: nextUrl }), {
@@ -81,25 +75,15 @@ async function maybeRewriteJobAudioResponse(url: string, response: Response): Pr
   }
 }
 
-function playableJobAudioUrl(jobId?: string, audioUrl?: string): string | undefined {
+/** Map presigned localhost MinIO URLs onto the same-origin MinIO proxy. */
+export function rewriteMinioAudioUrl(audioUrl?: string): string | undefined {
   if (!audioUrl) return audioUrl
-  if (!isUnreachableMediaHost(audioUrl)) return audioUrl
-  if (jobId && LOCAL_JOB_AUDIO[jobId]) return LOCAL_JOB_AUDIO[jobId]
-
-  // Last resort: match path slug to a local fixture.
-  for (const [id, path] of Object.entries(LOCAL_JOB_AUDIO)) {
-    if (audioUrl.includes(id.replace(/:/g, '_')) || audioUrl.includes(id)) return path
+  for (const origin of MINIO_LOCAL_ORIGINS) {
+    if (audioUrl.startsWith(`${origin}/`)) {
+      return `${MINIO_PROXY_PREFIX}${audioUrl.slice(origin.length)}`
+    }
   }
   return audioUrl
-}
-
-function isUnreachableMediaHost(audioUrl: string): boolean {
-  try {
-    const host = new URL(audioUrl).hostname
-    return host === 'localhost' || host === '127.0.0.1'
-  } catch {
-    return false
-  }
 }
 
 /** Prefer same-origin proxy; allow override via env for direct EC2 access. */
