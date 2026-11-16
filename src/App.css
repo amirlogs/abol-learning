@@ -374,10 +374,22 @@ html[data-contrast='high'] .atmosphere {
 abol-player {
   display: block;
   width: 100%;
+  max-width: 100%;
   min-height: 12rem;
   border-radius: var(--radius);
   overflow: hidden;
   background: #0b1f1c;
+  /* Match site tokens; player defaults stay dark for the stage */
+  --abol-accent: var(--sea);
+  --abol-bg: #0f1412;
+  --abol-fg: #f4f7f5;
+  --abol-radius: var(--radius);
+  --abol-focus: #ca8a04;
+  --abol-max-width: 100%;
+}
+
+abol-player::part(stage) {
+  border-radius: calc(var(--radius) - 2px);
 }
 
 .jobs-board {

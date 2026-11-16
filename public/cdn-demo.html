@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Abol Kit 1.0.0 · CDN smoke check</title>
+    <script src="https://cdn.jsdelivr.net/npm/@abolkit/player@1.0.0/dist/abol-player.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@abolkit/job-card@1.0.0/dist/abol-job-card.js"></script>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #0d1c18;
+        --paper: #eef5f1;
+        --sea: #17665e;
+        --abol-accent: #17665e;
+        --abol-bg: #ffffff;
+        --abol-fg: #0d1c18;
+        --abol-radius: 0.9rem;
+        --abol-focus: #ca8a04;
+        --abol-max-width: 100%;
+        font-family: Georgia, 'Iowan Old Style', serif;
+      }
+      body {
+        margin: 0;
+        background: linear-gradient(180deg, #eef5f1, #d5e5dc);
+        color: var(--ink);
+      }
+      main {
+        max-width: 52rem;
+        margin: 0 auto;
+        padding: 1.5rem 1.25rem 3rem;
+        display: grid;
+        gap: 1.5rem;
+      }
+      h1 {
+        margin: 0;
+        font-size: clamp(1.6rem, 4vw, 2.1rem);
+      }
+      p {
+        margin: 0.4rem 0 0;
+        max-width: 48ch;
+        line-height: 1.5;
+      }
+      .note {
+        font-size: 0.95rem;
+        opacity: 0.85;
+      }
+      code {
+        font-family: ui-monospace, monospace;
+        font-size: 0.9em;
+      }
+      abol-player {
+        display: block;
+        background: #0f1412;
+        border-radius: 0.9rem;
+        overflow: hidden;
+        --abol-bg: #0f1412;
+        --abol-fg: #f4f7f5;
+        --abol-accent: #17665e;
+      }
+      .jobs {
+        display: grid;
+        gap: 1rem;
+      }
+      a.back {
+        color: var(--sea);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="note">CDN · jsDelivr · <code>@1.0.0</code></p>
+        <h1>Abol Kit CDN smoke check</h1>
+        <p>
+          Loads <code>@abolkit/player@1.0.0</code> and <code>@abolkit/job-card@1.0.0</code> from the
+          CDN (not the Vite npm bundle). Compare with
+          <a class="back" href="/">the React demo</a>.
+        </p>
+      </header>
+
+      <section aria-labelledby="player-h">
+        <h2 id="player-h">Player</h2>
+        <p class="note">Captions via same-origin <code>/abol-proxy</code> · generate <code>am om ti aa</code></p>
+        <abol-player
+          src="https://www.youtube.com/watch?v=zQnBQ4tB3ZA"
+          lang="en"
+          caption-api="/abol-proxy"
+          generate-captions="am om ti aa"
+          sign="/sign/asl-alphabet.webm"
+          sign-placeholder
+          controls-keys="focus"
+        ></abol-player>
+      </section>
+
+      <section class="jobs" aria-labelledby="jobs-h">
+        <h2 id="jobs-h">Job card</h2>
+        <p class="note">Apply opens in a new tab when <code>url</code> is present · Listen via <code>/abol-proxy</code></p>
+        <abol-job-card
+          job-url="/jobs/junior-a11y.json"
+          audio-summary-api="/abol-proxy"
+          lang="en"
+          heading-level="3"
+        ></abol-job-card>
+      </section>
+    </main>
+  </body>
+</html>

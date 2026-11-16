@@ -58,8 +58,8 @@ export default function App() {
           </p>
           <h1 className="hero__headline">Calm lessons. Clear career notices.</h1>
           <p className="hero__lede">
-            A lightweight demo hub powered by Abol Kit — a featured captioned lesson with ASL
-            companion tracks, more resources on demand, accessible job notices, no accounts.
+            A lightweight demo hub powered by Abol Kit 1.0.0 — captioned lessons with ASL companion
+            tracks, Amharic Braille export when cues exist, accessible job notices, no accounts.
           </p>
           <div className="hero__cta">
             <a className="button" href="#learn">
@@ -72,8 +72,9 @@ export default function App() {
           <div className="section__intro">
             <h2 id="learn-heading">Learn</h2>
             <p>
-              One featured lesson on this page. More resources stay collapsed until you open them —
-              each player requests captions from the Abol Kit API and offers a sign-language window.
+              One featured lesson on this page. More stay collapsed until you open them — each{' '}
+              <code>abol-player</code> requests captions (Amharic, Afaan Oromoo, Tigrinya, Afar) and
+              offers a sign-language window.
             </p>
           </div>
 
@@ -135,8 +136,8 @@ export default function App() {
           <div className="section__intro">
             <h2 id="jobs-heading">Jobs</h2>
             <p>
-              Career notices as schema.org JobPosting cards — apply, listen to an audio summary from
-              the Abol API, and read structured details.
+              Career notices as schema.org JobPosting cards — Apply opens in a new tab when a URL is
+              present, Listen plays an audio summary, and key facts stay readable at 200% zoom.
             </p>
           </div>
           <JobsBoard />
@@ -153,7 +154,7 @@ export default function App() {
           <a href="http://16.16.124.190/docs" rel="noreferrer" target="_blank">
             reference<span className="visually-hidden"> (opens in a new tab)</span>
           </a>{' '}
-          · packages pinned at <code>0.1.1</code>
+          · packages pinned at <code>1.0.0</code>
         </p>
       </footer>
     </div>

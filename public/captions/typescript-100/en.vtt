@@ -1,0 +1,613 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:00.310
+[Music]
+
+00:00:00.310 --> 00:00:00.320
+[Music]
+
+00:00:00.320 --> 00:00:02.070
+[Music]
+typescript validate your javascript
+
+00:00:02.070 --> 00:00:02.080
+typescript validate your javascript
+
+00:00:02.080 --> 00:00:04.309
+typescript validate your javascript
+ahead of time with static type checking
+
+00:00:04.309 --> 00:00:04.319
+ahead of time with static type checking
+
+00:00:04.319 --> 00:00:06.309
+ahead of time with static type checking
+javascript is a dynamic language where
+
+00:00:06.309 --> 00:00:06.319
+javascript is a dynamic language where
+
+00:00:06.319 --> 00:00:08.070
+javascript is a dynamic language where
+we can do all kinds of crazy things
+
+00:00:08.070 --> 00:00:08.080
+we can do all kinds of crazy things
+
+00:00:08.080 --> 00:00:09.509
+we can do all kinds of crazy things
+like reference variables that don't
+
+00:00:09.509 --> 00:00:09.519
+like reference variables that don't
+
+00:00:09.519 --> 00:00:11.749
+like reference variables that don't
+exist or work with objects of an unknown
+
+00:00:11.749 --> 00:00:11.759
+exist or work with objects of an unknown
+
+00:00:11.759 --> 00:00:13.190
+exist or work with objects of an unknown
+shape the code is interpreted by a
+
+00:00:13.190 --> 00:00:13.200
+shape the code is interpreted by a
+
+00:00:13.200 --> 00:00:13.830
+shape the code is interpreted by a
+browser
+
+00:00:13.830 --> 00:00:13.840
+browser
+
+00:00:13.840 --> 00:00:15.350
+browser
+but if your code is broken you won't
+
+00:00:15.350 --> 00:00:15.360
+but if your code is broken you won't
+
+00:00:15.360 --> 00:00:17.189
+but if your code is broken you won't
+catch it until runtime when the browser
+
+00:00:17.189 --> 00:00:17.199
+catch it until runtime when the browser
+
+00:00:17.199 --> 00:00:17.990
+catch it until runtime when the browser
+rows an error
+
+00:00:17.990 --> 00:00:18.000
+rows an error
+
+00:00:18.000 --> 00:00:19.510
+rows an error
+typescript prevents errors like this
+
+00:00:19.510 --> 00:00:19.520
+typescript prevents errors like this
+
+00:00:19.520 --> 00:00:21.109
+typescript prevents errors like this
+from ever happening by extending
+
+00:00:21.109 --> 00:00:21.119
+from ever happening by extending
+
+00:00:21.119 --> 00:00:22.390
+from ever happening by extending
+javascript with types
+
+00:00:22.390 --> 00:00:22.400
+javascript with types
+
+00:00:22.400 --> 00:00:24.310
+javascript with types
+the language is a strict superset of
+
+00:00:24.310 --> 00:00:24.320
+the language is a strict superset of
+
+00:00:24.320 --> 00:00:26.230
+the language is a strict superset of
+javascript which means when you open up
+
+00:00:26.230 --> 00:00:26.240
+javascript which means when you open up
+
+00:00:26.240 --> 00:00:28.470
+javascript which means when you open up
+a ts file you can write plain javascript
+
+00:00:28.470 --> 00:00:28.480
+a ts file you can write plain javascript
+
+00:00:28.480 --> 00:00:29.990
+a ts file you can write plain javascript
+with all of its extra features
+
+00:00:29.990 --> 00:00:30.000
+with all of its extra features
+
+00:00:30.000 --> 00:00:31.750
+with all of its extra features
+being completely optional but notice in
+
+00:00:31.750 --> 00:00:31.760
+being completely optional but notice in
+
+00:00:31.760 --> 00:00:33.350
+being completely optional but notice in
+the code here how the ide
+
+00:00:33.350 --> 00:00:33.360
+the code here how the ide
+
+00:00:33.360 --> 00:00:35.190
+the code here how the ide
+is providing feedback about using a
+
+00:00:35.190 --> 00:00:35.200
+is providing feedback about using a
+
+00:00:35.200 --> 00:00:36.709
+is providing feedback about using a
+variable that doesn't exist
+
+00:00:36.709 --> 00:00:36.719
+variable that doesn't exist
+
+00:00:36.719 --> 00:00:38.389
+variable that doesn't exist
+instead of fixing this issue weeks later
+
+00:00:38.389 --> 00:00:38.399
+instead of fixing this issue weeks later
+
+00:00:38.399 --> 00:00:39.990
+instead of fixing this issue weeks later
+in a stack trace after the company has
+
+00:00:39.990 --> 00:00:40.000
+in a stack trace after the company has
+
+00:00:40.000 --> 00:00:41.830
+in a stack trace after the company has
+lost millions of dollars we can fix it
+
+00:00:41.830 --> 00:00:41.840
+lost millions of dollars we can fix it
+
+00:00:41.840 --> 00:00:43.190
+lost millions of dollars we can fix it
+right here right now
+
+00:00:43.190 --> 00:00:43.200
+right here right now
+
+00:00:43.200 --> 00:00:45.029
+right here right now
+the reason we get this instant feedback
+
+00:00:45.029 --> 00:00:45.039
+the reason we get this instant feedback
+
+00:00:45.039 --> 00:00:46.709
+the reason we get this instant feedback
+is because typescript behaves like a
+
+00:00:46.709 --> 00:00:46.719
+is because typescript behaves like a
+
+00:00:46.719 --> 00:00:47.830
+is because typescript behaves like a
+compiled language
+
+00:00:47.830 --> 00:00:47.840
+compiled language
+
+00:00:47.840 --> 00:00:49.670
+compiled language
+where javascript is the compilation
+
+00:00:49.670 --> 00:00:49.680
+where javascript is the compilation
+
+00:00:49.680 --> 00:00:51.189
+where javascript is the compilation
+target you can run the typescript
+
+00:00:51.189 --> 00:00:51.199
+target you can run the typescript
+
+00:00:51.199 --> 00:00:51.990
+target you can run the typescript
+compiler
+
+00:00:51.990 --> 00:00:52.000
+compiler
+
+00:00:52.000 --> 00:00:53.990
+compiler
+using the tsc command it will take the
+
+00:00:53.990 --> 00:00:54.000
+using the tsc command it will take the
+
+00:00:54.000 --> 00:00:56.470
+using the tsc command it will take the
+ts file and transpile it into vanilla
+
+00:00:56.470 --> 00:00:56.480
+ts file and transpile it into vanilla
+
+00:00:56.480 --> 00:00:57.110
+ts file and transpile it into vanilla
+javascript
+
+00:00:57.110 --> 00:00:57.120
+javascript
+
+00:00:57.120 --> 00:00:58.310
+javascript
+and you can choose any flavor of
+
+00:00:58.310 --> 00:00:58.320
+and you can choose any flavor of
+
+00:00:58.320 --> 00:00:59.910
+and you can choose any flavor of
+javascript you want if you need to
+
+00:00:59.910 --> 00:00:59.920
+javascript you want if you need to
+
+00:00:59.920 --> 00:01:01.270
+javascript you want if you need to
+target ancient browsers
+
+00:01:01.270 --> 00:01:01.280
+target ancient browsers
+
+00:01:01.280 --> 00:01:02.790
+target ancient browsers
+and that means you can use the latest
+
+00:01:02.790 --> 00:01:02.800
+and that means you can use the latest
+
+00:01:02.800 --> 00:01:04.229
+and that means you can use the latest
+and greatest syntax features of
+
+00:01:04.229 --> 00:01:04.239
+and greatest syntax features of
+
+00:01:04.239 --> 00:01:05.990
+and greatest syntax features of
+javascript without having to worry if
+
+00:01:05.990 --> 00:01:06.000
+javascript without having to worry if
+
+00:01:06.000 --> 00:01:07.429
+javascript without having to worry if
+they'll be supported in an older
+
+00:01:07.429 --> 00:01:07.439
+they'll be supported in an older
+
+00:01:07.439 --> 00:01:09.350
+they'll be supported in an older
+environment your typescript project will
+
+00:01:09.350 --> 00:01:09.360
+environment your typescript project will
+
+00:01:09.360 --> 00:01:11.109
+environment your typescript project will
+likely have a ts config file
+
+00:01:11.109 --> 00:01:11.119
+likely have a ts config file
+
+00:01:11.119 --> 00:01:12.469
+likely have a ts config file
+which provides an infinite number of
+
+00:01:12.469 --> 00:01:12.479
+which provides an infinite number of
+
+00:01:12.479 --> 00:01:14.310
+which provides an infinite number of
+ways to customize the behavior of the
+
+00:01:14.310 --> 00:01:14.320
+ways to customize the behavior of the
+
+00:01:14.320 --> 00:01:15.190
+ways to customize the behavior of the
+compiler
+
+00:01:15.190 --> 00:01:15.200
+compiler
+
+00:01:15.200 --> 00:01:17.109
+compiler
+but the primary goal of typescript is to
+
+00:01:17.109 --> 00:01:17.119
+but the primary goal of typescript is to
+
+00:01:17.119 --> 00:01:18.469
+but the primary goal of typescript is to
+enable static typing
+
+00:01:18.469 --> 00:01:18.479
+enable static typing
+
+00:01:18.479 --> 00:01:20.230
+enable static typing
+one way it achieves that is by allowing
+
+00:01:20.230 --> 00:01:20.240
+one way it achieves that is by allowing
+
+00:01:20.240 --> 00:01:22.070
+one way it achieves that is by allowing
+you to annotate your code with types
+
+00:01:22.070 --> 00:01:22.080
+you to annotate your code with types
+
+00:01:22.080 --> 00:01:24.149
+you to annotate your code with types
+we can strongly type a variable using a
+
+00:01:24.149 --> 00:01:24.159
+we can strongly type a variable using a
+
+00:01:24.159 --> 00:01:26.710
+we can strongly type a variable using a
+colon followed by its type like a string
+
+00:01:26.710 --> 00:01:26.720
+colon followed by its type like a string
+
+00:01:26.720 --> 00:01:27.749
+colon followed by its type like a string
+boolean or number
+
+00:01:27.749 --> 00:01:27.759
+boolean or number
+
+00:01:27.759 --> 00:01:29.910
+boolean or number
+that's known as an explicit type if we
+
+00:01:29.910 --> 00:01:29.920
+that's known as an explicit type if we
+
+00:01:29.920 --> 00:01:31.590
+that's known as an explicit type if we
+then try to assign its value as the
+
+00:01:31.590 --> 00:01:31.600
+then try to assign its value as the
+
+00:01:31.600 --> 00:01:33.109
+then try to assign its value as the
+wrong type we get an error
+
+00:01:33.109 --> 00:01:33.119
+wrong type we get an error
+
+00:01:33.119 --> 00:01:35.429
+wrong type we get an error
+alternatively if we set an initial value
+
+00:01:35.429 --> 00:01:35.439
+alternatively if we set an initial value
+
+00:01:35.439 --> 00:01:37.190
+alternatively if we set an initial value
+it will implicitly infer the type
+
+00:01:37.190 --> 00:01:37.200
+it will implicitly infer the type
+
+00:01:37.200 --> 00:01:38.789
+it will implicitly infer the type
+however there may be cases where you
+
+00:01:38.789 --> 00:01:38.799
+however there may be cases where you
+
+00:01:38.799 --> 00:01:40.390
+however there may be cases where you
+want to opt out of this behavior
+
+00:01:40.390 --> 00:01:40.400
+want to opt out of this behavior
+
+00:01:40.400 --> 00:01:42.230
+want to opt out of this behavior
+in which case you can annotate with the
+
+00:01:42.230 --> 00:01:42.240
+in which case you can annotate with the
+
+00:01:42.240 --> 00:01:44.550
+in which case you can annotate with the
+any type that allows you to loosely type
+
+00:01:44.550 --> 00:01:44.560
+any type that allows you to loosely type
+
+00:01:44.560 --> 00:01:46.710
+any type that allows you to loosely type
+or opt out of type checking when working
+
+00:01:46.710 --> 00:01:46.720
+or opt out of type checking when working
+
+00:01:46.720 --> 00:01:47.510
+or opt out of type checking when working
+with an array
+
+00:01:47.510 --> 00:01:47.520
+with an array
+
+00:01:47.520 --> 00:01:49.990
+with an array
+use brackets to strongly type a list in
+
+00:01:49.990 --> 00:01:50.000
+use brackets to strongly type a list in
+
+00:01:50.000 --> 00:01:51.830
+use brackets to strongly type a list in
+addition you can define your own custom
+
+00:01:51.830 --> 00:01:51.840
+addition you can define your own custom
+
+00:01:51.840 --> 00:01:53.270
+addition you can define your own custom
+types and interfaces
+
+00:01:53.270 --> 00:01:53.280
+types and interfaces
+
+00:01:53.280 --> 00:01:54.710
+types and interfaces
+which is especially powerful when
+
+00:01:54.710 --> 00:01:54.720
+which is especially powerful when
+
+00:01:54.720 --> 00:01:56.709
+which is especially powerful when
+working with objects the car interface
+
+00:01:56.709 --> 00:01:56.719
+working with objects the car interface
+
+00:01:56.719 --> 00:01:58.310
+working with objects the car interface
+here defines various types
+
+00:01:58.310 --> 00:01:58.320
+here defines various types
+
+00:01:58.320 --> 00:02:00.230
+here defines various types
+of the properties on an object we can
+
+00:02:00.230 --> 00:02:00.240
+of the properties on an object we can
+
+00:02:00.240 --> 00:02:01.830
+of the properties on an object we can
+then apply the interface to a plain
+
+00:02:01.830 --> 00:02:01.840
+then apply the interface to a plain
+
+00:02:01.840 --> 00:02:03.030
+then apply the interface to a plain
+javascript object
+
+00:02:03.030 --> 00:02:03.040
+javascript object
+
+00:02:03.040 --> 00:02:05.109
+javascript object
+the beauty of having strongly typed code
+
+00:02:05.109 --> 00:02:05.119
+the beauty of having strongly typed code
+
+00:02:05.119 --> 00:02:06.789
+the beauty of having strongly typed code
+is that we get autocomplete everywhere
+
+00:02:06.789 --> 00:02:06.799
+is that we get autocomplete everywhere
+
+00:02:06.799 --> 00:02:07.670
+is that we get autocomplete everywhere
+in our ide
+
+00:02:07.670 --> 00:02:07.680
+in our ide
+
+00:02:07.680 --> 00:02:09.190
+in our ide
+we don't have to jump back and forth to
+
+00:02:09.190 --> 00:02:09.200
+we don't have to jump back and forth to
+
+00:02:09.200 --> 00:02:11.029
+we don't have to jump back and forth to
+documentation or dig through stack
+
+00:02:11.029 --> 00:02:11.039
+documentation or dig through stack
+
+00:02:11.039 --> 00:02:12.710
+documentation or dig through stack
+traces to figure out why our code's not
+
+00:02:12.710 --> 00:02:12.720
+traces to figure out why our code's not
+
+00:02:12.720 --> 00:02:13.190
+traces to figure out why our code's not
+working
+
+00:02:13.190 --> 00:02:13.200
+working
+
+00:02:13.200 --> 00:02:14.790
+working
+if you like typescript as much as i do
+
+00:02:14.790 --> 00:02:14.800
+if you like typescript as much as i do
+
+00:02:14.800 --> 00:02:16.470
+if you like typescript as much as i do
+consider becoming a pro member at
+
+00:02:16.470 --> 00:02:16.480
+consider becoming a pro member at
+
+00:02:16.480 --> 00:02:18.309
+consider becoming a pro member at
+fireship io for the next few days
+
+00:02:18.309 --> 00:02:18.319
+fireship io for the next few days
+
+00:02:18.319 --> 00:02:20.229
+fireship io for the next few days
+everything will be 40 off including
+
+00:02:20.229 --> 00:02:20.239
+everything will be 40 off including
+
+00:02:20.239 --> 00:02:22.070
+everything will be 40 off including
+lifetime memberships thanks for watching
+
+00:02:22.070 --> 00:02:22.080
+lifetime memberships thanks for watching
+
+00:02:22.080 --> 00:02:26.400
+lifetime memberships thanks for watching
+and i will see you in the next one

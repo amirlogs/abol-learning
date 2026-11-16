@@ -1,0 +1,424 @@
+WEBVTT
+
+00:00:00.199 --> 00:00:02.990 needsReview
+go qafar afkaari akay
+
+00:00:02.990 --> 00:00:03.000 needsReview
+go qafar afkaari akay
+
+00:00:03.000 --> 00:00:05.550 needsReview
+go qafar afkaari akay c abal
+
+00:00:05.550 --> 00:00:05.560 needsReview
+c abal
+
+00:00:05.560 --> 00:00:07.789 needsReview
+c abal is a popular choice for high
+
+00:00:07.789 --> 00:00:07.799 needsReview
+is a popular choice for high
+
+00:00:07.799 --> 00:00:09.950 needsReview
+is a popular choice for high
+
+00:00:09.950 --> 00:00:09.960 needsReview
+performance serers side applications and
+
+00:00:09.960 --> 00:00:11.629 needsReview
+performance serers side applications and
+
+00:00:11.629 --> 00:00:11.639 needsReview
+is the language that built tools like
+
+00:00:11.639 --> 00:00:14.589 needsReview
+Docker cockroach DB and dgraph it was
+
+00:00:14.589 --> 00:00:14.599 needsReview
+Docker cockroach DB and dgraph it was
+
+00:00:14.599 --> 00:00:17.470 needsReview
+Docker cockroach DB and dgraph it was
+
+00:00:17.470 --> 00:00:17.480 needsReview
+created at Google in 2007 by Legends who
+
+00:00:17.480 --> 00:00:18.990 needsReview
+created at Google in 2007 by Legends who
+
+00:00:18.990 --> 00:00:19.000 needsReview
+really know their stuff like Ken
+
+00:00:19.000 --> 00:00:21.470 needsReview
+Thompson the inventor of the B and C
+
+00:00:21.470 --> 00:00:21.480 needsReview
+Thompson the inventor of the B and C
+
+00:00:21.480 --> 00:00:23.630 needsReview
+Thompson the inventor of the B and C
+
+00:00:23.630 --> 00:00:23.640 needsReview
+programming languages version 1.0 was
+
+00:00:23.640 --> 00:00:26.429 needsReview
+released as open-source software in 2012
+
+00:00:26.429 --> 00:00:26.439 needsReview
+released as open-source software in 2012
+
+00:00:26.439 --> 00:00:28.349 needsReview
+it was designed for Simplicity and
+
+00:00:28.349 --> 00:00:28.359 needsReview
+it was designed for Simplicity and
+
+00:00:28.359 --> 00:00:30.310 needsReview
+efficiency and that's why we call it go
+
+00:00:30.310 --> 00:00:30.320 needsReview
+efficiency and that's why we call it go
+
+00:00:30.320 --> 00:00:32.429 needsReview
+and not go Lang the source code is
+
+00:00:32.429 --> 00:00:32.439 needsReview
+and not go Lang the source code is
+
+00:00:32.439 --> 00:00:33.990 needsReview
+compiled down to machine code which
+
+00:00:33.990 --> 00:00:34.000 needsReview
+compiled down to machine code which
+
+00:00:34.000 --> 00:00:35.350 needsReview
+means it generally outperforms
+
+00:00:35.350 --> 00:00:35.360 needsReview
+means it generally outperforms
+
+00:00:35.360 --> 00:00:37.229 needsReview
+interpreted languages but it's famous
+
+00:00:37.229 --> 00:00:37.239 needsReview
+interpreted languages but it's famous
+
+00:00:37.239 --> 00:00:39.350 needsReview
+for its extremely fast compile times
+
+00:00:39.350 --> 00:00:39.360 needsReview
+for its extremely fast compile times
+
+00:00:39.360 --> 00:00:41.069 needsReview
+made possible by Innovations to
+
+00:00:41.069 --> 00:00:41.079 needsReview
+made possible by Innovations to
+
+00:00:41.079 --> 00:00:43.069 needsReview
+dependency analysis and even though it's
+
+00:00:43.069 --> 00:00:43.079 needsReview
+dependency analysis and even though it's
+
+00:00:43.079 --> 00:00:45.190 needsReview
+a statically typed language it performs
+
+00:00:45.190 --> 00:00:45.200 needsReview
+a statically typed language it performs
+
+00:00:45.200 --> 00:00:47.430 needsReview
+type inference to deliver a syntax that
+
+00:00:47.430 --> 00:00:47.440 needsReview
+type inference to deliver a syntax that
+
+00:00:47.440 --> 00:00:49.549 needsReview
+is very concise and practical it also
+
+00:00:49.549 --> 00:00:49.559 needsReview
+is very concise and practical it also
+
+00:00:49.559 --> 00:00:51.750 needsReview
+has a package and module system making
+
+00:00:51.750 --> 00:00:51.760 needsReview
+has a package and module system making
+
+00:00:51.760 --> 00:00:54.110 needsReview
+it easy to Import and Export code
+
+00:00:54.110 --> 00:00:54.120 needsReview
+it easy to Import and Export code
+
+00:00:54.120 --> 00:00:56.430 needsReview
+between projects to get started install
+
+00:00:56.430 --> 00:00:56.440 needsReview
+between projects to get started install
+
+00:00:56.440 --> 00:00:58.430 needsReview
+go and then open an empty directory on
+
+00:00:58.430 --> 00:00:58.440 needsReview
+go and then open an empty directory on
+
+00:00:58.440 --> 00:01:01.189 needsReview
+your system create a file ending and.go
+
+00:01:01.189 --> 00:01:01.199 needsReview
+your system create a file ending and.go
+
+00:01:01.199 --> 00:01:03.509 needsReview
+then add package main at the top to
+
+00:01:03.509 --> 00:01:03.519 needsReview
+then add package main at the top to
+
+00:01:03.519 --> 00:01:05.830 needsReview
+create a standalone executable then
+
+00:01:05.830 --> 00:01:05.840 needsReview
+create a standalone executable then
+
+00:01:05.840 --> 00:01:07.710 needsReview
+declare a main function which is where
+
+00:01:07.710 --> 00:01:07.720 needsReview
+declare a main function which is where
+
+00:01:07.720 --> 00:01:10.109 needsReview
+your program will start executing go has
+
+00:01:10.109 --> 00:01:10.119 needsReview
+your program will start executing go has
+
+00:01:10.119 --> 00:01:12.429 needsReview
+a standard library of core packages to
+
+00:01:12.429 --> 00:01:12.439 needsReview
+a standard library of core packages to
+
+00:01:12.439 --> 00:01:14.510 needsReview
+handle common requirements like math
+
+00:01:14.510 --> 00:01:14.520 needsReview
+handle common requirements like math
+
+00:01:14.520 --> 00:01:17.429 needsReview
+networking or formatted IO by importing
+
+00:01:17.429 --> 00:01:17.439 needsReview
+networking or formatted IO by importing
+
+00:01:17.439 --> 00:01:19.910 needsReview
+fmt we can print a line to the standard
+
+00:01:19.910 --> 00:01:19.920 needsReview
+fmt we can print a line to the standard
+
+00:01:19.920 --> 00:01:22.270 needsReview
+output then run the go build command and
+
+00:01:22.270 --> 00:01:22.280 needsReview
+output then run the go build command and
+
+00:01:22.280 --> 00:01:24.069 needsReview
+it quickly compiles the source code and
+
+00:01:24.069 --> 00:01:24.079 needsReview
+it quickly compiles the source code and
+
+00:01:24.079 --> 00:01:26.469 needsReview
+dependencies into an executable binary
+
+00:01:26.469 --> 00:01:26.479 needsReview
+dependencies into an executable binary
+
+00:01:26.479 --> 00:01:28.030 needsReview
+when it comes to dependencies we can
+
+00:01:28.030 --> 00:01:28.040 needsReview
+when it comes to dependencies we can
+
+00:01:28.040 --> 00:01:30.149 needsReview
+ikakakki gita kaxx abna akah ikkih GitHub
+
+00:01:30.149 --> 00:01:30.159 needsReview
+GitHub akah remote package akak ikkih
+
+00:01:30.159 --> 00:01:32.350 needsReview
+GitHub akah remote package akak ikkih command line-h go mod a knit gaza
+
+00:01:32.350 --> 00:01:32.360 needsReview
+command line-h go mod a knit gaza
+
+00:01:32.360 --> 00:01:34.190 needsReview
+command line-h go mod a knit gaza ikkih woh go module file tabxis
+
+00:01:34.190 --> 00:01:34.200 needsReview
+ikkih woh go module file tabxis
+
+00:01:34.200 --> 00:01:35.789 needsReview
+ikkih woh go module file tabxis dependency tracking kak yaabta
+
+00:01:35.789 --> 00:01:35.799 needsReview
+dependency tracking kak yaabta
+
+00:01:35.799 --> 00:01:37.749 needsReview
+dependency tracking kak yaabta syntax kax akah C kaadu C++
+
+00:01:37.749 --> 00:01:37.759 needsReview
+syntax kax akah C kaadu C++
+
+00:01:37.759 --> 00:01:40.789 needsReview
+syntax kax akah C kaadu C++ variable abna
+
+00:01:40.789 --> 00:01:40.799 needsReview
+variable abna
+
+00:01:40.799 --> 00:01:42.590 needsReview
+variable abna VAR keyword akah takkuh
+
+00:01:42.590 --> 00:01:42.600 needsReview
+VAR keyword akah takkuh
+
+00:01:42.600 --> 00:01:44.830 needsReview
+VAR keyword akah takkuh name kaadu type akah value-h
+
+00:01:44.830 --> 00:01:44.840 needsReview
+name kaadu type akah value-h
+
+00:01:44.840 --> 00:01:46.350 needsReview
+name kaadu type akah value-h kaadu short
+
+00:01:46.350 --> 00:01:46.360 needsReview
+kaadu short
+
+00:01:46.360 --> 00:01:48.789 needsReview
+kaadu short assignment syntax kax VAR gital
+
+00:01:48.789 --> 00:01:48.799 needsReview
+assignment syntax kax VAR gital
+
+00:01:48.799 --> 00:01:50.990 needsReview
+assignment syntax kax VAR gital go automatically type yaabta
+
+00:01:50.990 --> 00:01:51.000 needsReview
+go automatically type yaabta
+
+00:01:51.000 --> 00:01:52.670 needsReview
+go automatically type yaabta kaadu kaxx variable
+
+00:01:52.670 --> 00:01:52.680 needsReview
+kaadu kaxx variable
+
+00:01:52.680 --> 00:01:54.350 needsReview
+kaadu kaxx variable single line-h kax abta go-h
+
+00:01:54.350 --> 00:01:54.360 needsReview
+single line-h kax abta go-h
+
+00:01:54.360 --> 00:01:55.429 needsReview
+single line-h kax abta go-h programming language-h
+
+00:01:55.429 --> 00:01:55.439 needsReview
+programming language-h
+
+00:01:55.439 --> 00:01:57.389 needsReview
+programming language-h arrays Maps
+
+00:01:57.389 --> 00:01:57.399 needsReview
+arrays Maps
+
+00:01:57.399 --> 00:01:59.469 needsReview
+arrays Maps loops kaadu control flow akah abta
+
+00:01:59.469 --> 00:01:59.479 needsReview
+loops kaadu control flow akah abta
+
+00:01:59.479 --> 00:02:01.149 needsReview
+loops kaadu control flow akah abta memory address
+
+00:02:01.149 --> 00:02:01.159 needsReview
+memory address
+
+00:02:01.159 --> 00:02:03.310 needsReview
+memory address pointers akah value store
+
+00:02:03.310 --> 00:02:03.320 needsReview
+pointers akah value store
+
+00:02:03.320 --> 00:02:05.469 needsReview
+pointers akah value store pointer arithmetic
+
+00:02:05.469 --> 00:02:05.479 needsReview
+pointer arithmetic
+
+00:02:05.479 --> 00:02:07.749 needsReview
+pointer arithmetic dangerous and unpredictable
+
+00:02:07.749 --> 00:02:07.759 needsReview
+dangerous and unpredictable
+
+00:02:07.759 --> 00:02:09.990 needsReview
+dangerous and unpredictable go routines kax concurrency
+
+00:02:09.990 --> 00:02:10.000 needsReview
+go routines kax concurrency
+
+00:02:10.000 --> 00:02:11.630 needsReview
+go routines kax concurrency function-h
+
+00:02:11.630 --> 00:02:11.640 needsReview
+function-h
+
+00:02:11.640 --> 00:02:13.790 needsReview
+function-h other function-h gita
+
+00:02:13.790 --> 00:02:13.800 needsReview
+other function-h gita
+
+00:02:13.800 --> 00:02:16.509 needsReview
+other function-h gita CPU-h multiple threads
+
+00:02:16.509 --> 00:02:16.519 needsReview
+CPU-h multiple threads
+
+00:02:16.519 --> 00:02:18.830 needsReview
+CPU-h multiple threads 100 seconds-h goh
+
+00:02:18.830 --> 00:02:18.840 needsReview
+100 seconds-h goh
+
+00:02:18.840 --> 00:02:19.949 needsReview
+100 seconds-h goh like button gita
+
+00:02:19.949 --> 00:02:19.959 needsReview
+like button gita
+
+00:02:19.959 --> 00:02:21.630 needsReview
+like button gita short video kak yanim akah
+
+00:02:21.630 --> 00:02:21.640 needsReview
+short video kak yanim akah
+
+00:02:21.640 --> 00:02:23.430 needsReview
+short video kak yanim akah full article
+
+00:02:23.430 --> 00:02:23.440 needsReview
+full article
+
+00:02:23.440 --> 00:02:25.710 needsReview
+full article fireship iio-h go-h first 100 lines
+
+00:02:25.710 --> 00:02:25.720 needsReview
+fireship iio-h go-h first 100 lines
+
+00:02:25.720 --> 00:02:27.589 needsReview
+fireship iio-h go-h first 100 lines qunta akah
+
+00:02:27.589 --> 00:02:27.599 needsReview
+qunta akah
+
+00:02:27.599 --> 00:02:30.599 needsReview
+qunta akah taturte

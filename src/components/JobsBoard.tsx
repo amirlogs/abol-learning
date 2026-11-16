@@ -1,60 +1,56 @@
-import {
-  AbolJobCard,
-  type AbolJobCardElement,
-  type JobApplyEventDetail,
-  type SummaryPlayEventDetail,
-} from '@abolkit/job-card/react'
-import { useEffect, useId, useRef, useState } from 'react'
+import { AbolJobCard, type JobApplyEventDetail, type SummaryPlayEventDetail } from '@abolkit/job-card/react'
+import { useId, useState } from 'react'
 import { abolApiOrigin } from '../config'
 
 const jobs = [
-  { id: 'junior-a11y', jobUrl: '/jobs/junior-a11y.json' },
-  { id: 'learning-content', jobUrl: '/jobs/learning-content.json' },
-  { id: 'frontend-learning', jobUrl: '/jobs/frontend-learning.json' },
+  {
+    id: 'junior-a11y',
+    jobUrl: '/jobs/junior-a11y.json',
+    calendar: 'gregory' as const,
+  },
+  {
+    id: 'learning-content',
+    jobUrl: '/jobs/learning-content.json',
+    /** Docs 1.0.0: ethiopic calendar for Ethiopian postings */
+    calendar: 'ethiopic' as const,
+  },
+  {
+    id: 'frontend-learning',
+    jobUrl: '/jobs/frontend-learning.json',
+    calendar: 'gregory' as const,
+  },
 ] as const
 
 function JobNotice(props: {
   jobUrl: string
+  calendar: 'gregory' | 'ethiopic'
   onAnnounce: (message: string) => void
 }) {
-  const ref = useRef<AbolJobCardElement | null>(null)
-  const onAnnounceRef = useRef(props.onAnnounce)
-  onAnnounceRef.current = props.onAnnounce
+  const onApply = (detail: JobApplyEventDetail) => {
+    // 1.0.0: Apply with a posting url is a real new-tab link. Do not preventDefault —
+    // let the card open the career URL; still announce for the live region.
+    props.onAnnounce(
+      detail.url
+        ? `Opening apply link for ${detail.job.title} in a new tab.`
+        : `Apply signaled for ${detail.job.title}. This demo has no account flow.`,
+    )
+  }
 
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-
-    const onApply = (event: Event) => {
-      event.preventDefault()
-      const detail = (event as CustomEvent<JobApplyEventDetail>).detail
-      onAnnounceRef.current(
-        `Demo apply recorded for ${detail.job.title}. No account is required in this demo.`,
-      )
+  const onPlay = (detail: SummaryPlayEventDetail) => {
+    if (detail.playing) {
+      props.onAnnounce(`Playing audio summary for ${detail.job.title}.`)
     }
-
-    const onPlay = (event: Event) => {
-      const detail = (event as CustomEvent<SummaryPlayEventDetail>).detail
-      if (detail.playing) {
-        onAnnounceRef.current(`Playing audio summary for ${detail.job.title}.`)
-      }
-    }
-
-    el.addEventListener('abol:job-apply', onApply)
-    el.addEventListener('abol:summary-play', onPlay)
-    return () => {
-      el.removeEventListener('abol:job-apply', onApply)
-      el.removeEventListener('abol:summary-play', onPlay)
-    }
-  }, [])
+  }
 
   return (
     <AbolJobCard
-      ref={ref}
       jobUrl={props.jobUrl}
       audioSummaryApi={abolApiOrigin}
       lang="en"
+      calendar={props.calendar}
       headingLevel={3}
+      onJobApply={onApply}
+      onSummaryPlay={onPlay}
     />
   )
 }
@@ -66,8 +62,9 @@ export function JobsBoard() {
   return (
     <div className="jobs-board">
       <p className="hint" role="note">
-        Listen uses <code>audioSummaryApi</code> and original AssemblyAI summaries
-        (<code>abolAudioSummary</code>). Key facts and apply are on each card.
+        Cards use <code>AbolJobCard</code> from <code>@abolkit/job-card@1.0.0</code> —{' '}
+        <code>audioSummaryApi</code> for Listen, Apply opens the posting URL in a new tab, and one
+        notice uses <code>calendar=&quot;ethiopic&quot;</code>.
       </p>
 
       <div
@@ -82,7 +79,11 @@ export function JobsBoard() {
       <ul className="jobs-board__list">
         {jobs.map((job) => (
           <li key={job.id}>
-            <JobNotice jobUrl={job.jobUrl} onAnnounce={setAnnounce} />
+            <JobNotice
+              jobUrl={job.jobUrl}
+              calendar={job.calendar}
+              onAnnounce={setAnnounce}
+            />
           </li>
         ))}
       </ul>

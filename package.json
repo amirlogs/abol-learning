@@ -7,11 +7,14 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "sync:abol-kit": "node scripts/sync-abol-kit.mjs",
+    "sync:captions": "node scripts/sync-captions.mjs",
+    "postinstall": "node scripts/sync-abol-kit.mjs"
   },
   "dependencies": {
-    "@abolkit/job-card": "0.1.1",
-    "@abolkit/player": "0.1.1",
+    "@abolkit/job-card": "1.0.0",
+    "@abolkit/player": "1.0.0",
     "react": "^19.3.1",
     "react-dom": "^19.3.1"
   },
