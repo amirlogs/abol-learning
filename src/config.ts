@@ -1,13 +1,11 @@
-/** Abol Kit API origin — packages append `/api/...` themselves. */
-function normalizeApiOrigin(raw: string): string {
-  return raw.trim().replace(/\/+$/, '').replace(/\/api$/i, '')
-}
+import { resolveAbolApiOrigin } from './abolApiProxy'
 
-const DEFAULT_API_ORIGIN = 'http://16.16.124.190'
-
-export const abolApiOrigin = normalizeApiOrigin(
-  import.meta.env.VITE_ABOL_API_ORIGIN?.trim() || DEFAULT_API_ORIGIN,
-)
+/**
+ * Caption API base for `<abol-player caption-api>`.
+ * Defaults to same-origin `/abol-proxy` (Vite/Vercel rewrite → EC2) so HTTPS pages
+ * are not blocked by mixed content.
+ */
+export const abolApiOrigin = resolveAbolApiOrigin(import.meta.env.VITE_ABOL_API_ORIGIN)
 
 /** Languages accepted by player `generate-captions` (subset of API TRANSLATION_LANGUAGES). */
 export const generateCaptions =

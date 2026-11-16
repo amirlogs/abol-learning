@@ -18,18 +18,20 @@ Never use `latest`. Docs: https://abolkit.vercel.app/
 
 ## API
 
-Default origin (also in `.env`):
+EC2 API: `http://16.16.124.190` ([docs](http://16.16.124.190/docs))
 
-- Origin: `http://16.16.124.190`
-- Docs: http://16.16.124.190/docs
+Browsers block **HTTPS pages** (e.g. Vercel) from calling plain HTTP APIs (mixed content). This demo proxies through same-origin `/abol-proxy`:
 
-Wired as:
+| Layer | Behavior |
+| --- | --- |
+| Vite / Vercel | `/abol-proxy/*` → `http://16.16.124.190/*` |
+| App | `caption-api="/abol-proxy"` + fetch rewrite for absolute EC2 VTT URLs |
 
 | Attribute / prop | Value |
 | --- | --- |
-| `caption-api` | `http://16.16.124.190` |
+| `caption-api` | `/abol-proxy` (default) |
 | `generate-captions` | `am om ti aa` |
-| `audioSummaryApi` | `http://16.16.124.190` |
+| Job listen audio | local `abolAudioSummary` MP3s under `/audio/` |
 
 ## Run
 

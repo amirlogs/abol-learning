@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/abol-proxy/:path*",
+      "destination": "http://16.16.124.190/:path*"
+    }
+  ]
+}
