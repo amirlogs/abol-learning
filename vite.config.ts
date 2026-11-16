@@ -13,6 +13,11 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/abol-proxy/, ''),
       },
+      // Job-card strips audio-summary-api to `.origin`, then POSTs `/api/...`.
+      '/api': {
+        target: 'http://16.16.124.190',
+        changeOrigin: true,
+      },
     },
   },
   preview: {
@@ -22,6 +27,11 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/abol-proxy/, ''),
       },
+      '/api': {
+        target: 'http://16.16.124.190',
+        changeOrigin: true,
+      },
     },
   },
 })
+

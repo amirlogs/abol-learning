@@ -3,6 +3,10 @@
     {
       "source": "/abol-proxy/:path*",
       "destination": "http://16.16.124.190/:path*"
+    },
+    {
+      "source": "/api/:path*",
+      "destination": "http://16.16.124.190/api/:path*"
     }
   ]
 }

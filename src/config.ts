@@ -4,6 +4,9 @@ import { resolveAbolApiOrigin } from './abolApiProxy'
  * Caption API base for `<abol-player caption-api>`.
  * Defaults to same-origin `/abol-proxy` (Vite/Vercel rewrite → EC2) so HTTPS pages
  * are not blocked by mixed content.
+ *
+ * Job-card `audioSummaryApi` uses `.origin` only, so the same value collapses to
+ * the page origin and hits `/api/...` (also rewritten to EC2).
  */
 export const abolApiOrigin = resolveAbolApiOrigin(import.meta.env.VITE_ABOL_API_ORIGIN)
 
@@ -30,13 +33,26 @@ export type Lesson = {
 }
 
 /**
- * Three lessons with caption API + ASL companion tracks.
- * Captions: English transcript + am/om/ti/aa via `caption-api` / `generate-captions`.
+ * Featured lesson is `lessons[0]` (shown on the Learn hub).
+ * Remaining lessons stay in a minimizable resource list.
  */
 export const lessons: Lesson[] = [
   {
+    id: 'typescript-100',
+    resourceLabel: 'Lesson 01 · Typed JavaScript',
+    title: 'TypeScript in 100 Seconds',
+    blurb: 'Fireship explainer · ~2.5 min · captions via Abol API',
+    summary:
+      'A short Fireship explainer of TypeScript: static types, tsc, and why teams add types to JavaScript. Captions load from the Abol Kit API.',
+    src: 'https://www.youtube.com/watch?v=zQnBQ4tB3ZA',
+    sign: '/sign/asl-alphabet.webm',
+    signPlaceholder: true,
+    signCredit:
+      'Sign window: ASL alphabet demo by Travis Dougherty (CC BY-SA), via Wikimedia Commons.',
+  },
+  {
     id: 'go-100',
-    resourceLabel: 'Lesson 01 · Systems languages',
+    resourceLabel: 'Lesson 02 · Systems languages',
     title: 'Go in 100 Seconds',
     blurb: 'Fireship explainer · ~2.5 min · captions via Abol API',
     summary:
@@ -49,7 +65,7 @@ export const lessons: Lesson[] = [
   },
   {
     id: 'obama-opportunity',
-    resourceLabel: 'Lesson 02 · Public speaking',
+    resourceLabel: 'Lesson 03 · Public speaking',
     title: 'Weekly Address: Restoring Opportunity for All',
     blurb: 'Obama White House · ~2.5 min · captions via Abol API',
     summary:
@@ -59,18 +75,5 @@ export const lessons: Lesson[] = [
     signPlaceholder: true,
     signCredit:
       'Sign window: “The Tortoise and the Hare” in ASL by ASLized! (CC BY 3.0), via Wikimedia Commons.',
-  },
-  {
-    id: 'lightning-dhh',
-    resourceLabel: 'Lesson 03 · Inclusive safety',
-    title: 'Lightning Safety for the Deaf and Hard of Hearing Community',
-    blurb: 'Open educational WebM · ~1 min · captions via Abol API',
-    summary:
-      'Public-domain educational video for the Deaf and hard-of-hearing community. Captions are generated through the Abol Kit caption API.',
-    src: 'https://upload.wikimedia.org/wikipedia/commons/e/ee/Lightning_Safety_for_the_Deaf_and_Hard_of_Hearing_Community.webm',
-    sign: '/sign/asl-alphabet.webm',
-    signPlaceholder: true,
-    signCredit:
-      'Sign window: ASL alphabet demo by Travis Dougherty (CC BY-SA), via Wikimedia Commons.',
   },
 ]

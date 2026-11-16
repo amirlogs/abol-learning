@@ -24,14 +24,14 @@ Browsers block **HTTPS pages** (e.g. Vercel) from calling plain HTTP APIs (mixed
 
 | Layer | Behavior |
 | --- | --- |
-| Vite / Vercel | `/abol-proxy/*` → `http://16.16.124.190/*` |
+| Vite / Vercel | `/abol-proxy/*` and `/api/*` → EC2 |
 | App | `caption-api="/abol-proxy"` + fetch rewrite for absolute EC2 VTT URLs |
 
 | Attribute / prop | Value |
 | --- | --- |
 | `caption-api` | `/abol-proxy` (default) |
 | `generate-captions` | `am om ti aa` |
-| Job listen audio | local `abolAudioSummary` MP3s under `/audio/` |
+| Job listen | `audioSummaryApi` → `POST /api/job-summaries/audio` (unreachable MinIO URLs fall back to `/audio/*.mp3`) |
 
 ## Run
 
@@ -49,9 +49,9 @@ npm run preview
 
 | Lesson | Media | Sign window |
 | --- | --- | --- |
-| Go in 100 Seconds | YouTube | ASL alphabet (local WebM) |
+| TypeScript in 100 Seconds (featured) | YouTube / Fireship | ASL alphabet (local WebM) |
+| Go in 100 Seconds | YouTube / Fireship | ASL alphabet (local WebM) |
 | Obama Weekly Address | YouTube | ASL story (local WebM) |
-| Lightning Safety (DHH) | Wikimedia WebM | ASL alphabet (local WebM) |
 
 Sign media attribution: `public/sign/ATTRIBUTION.md`. Tracks use `sign-placeholder` when they are illustrative companions.
 

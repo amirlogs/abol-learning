@@ -5,6 +5,7 @@ import {
   type SummaryPlayEventDetail,
 } from '@abolkit/job-card/react'
 import { useEffect, useId, useRef, useState } from 'react'
+import { abolApiOrigin } from '../config'
 
 const jobs = [
   { id: 'junior-a11y', jobUrl: '/jobs/junior-a11y.json' },
@@ -47,7 +48,15 @@ function JobNotice(props: {
     }
   }, [])
 
-  return <AbolJobCard ref={ref} jobUrl={props.jobUrl} lang="en" headingLevel={3} />
+  return (
+    <AbolJobCard
+      ref={ref}
+      jobUrl={props.jobUrl}
+      audioSummaryApi={abolApiOrigin}
+      lang="en"
+      headingLevel={3}
+    />
+  )
 }
 
 export function JobsBoard() {
@@ -57,8 +66,9 @@ export function JobsBoard() {
   return (
     <div className="jobs-board">
       <p className="hint" role="note">
-        Each notice includes a plain-language summary, listen control (local audio via{' '}
-        <code>abolAudioSummary</code>), key facts, and apply action.
+        Each notice includes a plain-language summary, listen control via{' '}
+        <code>audioSummaryApi</code> (<code>{abolApiOrigin}</code> →{' '}
+        <code>/api/job-summaries/audio</code>), key facts, and apply action.
       </p>
 
       <div

@@ -231,6 +231,54 @@ html[data-contrast='high'] .atmosphere {
   color: var(--ink-soft);
 }
 
+.learn-hub {
+  display: grid;
+  gap: var(--space-4);
+  max-width: 52rem;
+}
+
+.learn-hub__featured {
+  max-width: 52rem;
+}
+
+.more-lessons {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  padding: 0.35rem 0.85rem 0.85rem;
+}
+
+.more-lessons__summary {
+  cursor: pointer;
+  list-style: none;
+  min-height: var(--control-min);
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  color: var(--sea-deep);
+  padding: 0.45rem 0.15rem;
+}
+
+.more-lessons__summary::-webkit-details-marker {
+  display: none;
+}
+
+.more-lessons__summary::before {
+  content: '▸';
+  display: inline-block;
+  transition: transform 160ms ease;
+}
+
+.more-lessons[open] > .more-lessons__summary::before {
+  transform: rotate(90deg);
+}
+
+.more-lessons .resource-list {
+  margin-top: var(--space-2);
+}
+
 .resource-list {
   list-style: none;
   margin: 0;

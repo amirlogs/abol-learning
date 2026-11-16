@@ -7,13 +7,16 @@ import './App.css'
 
 type View = 'hub' | 'lesson'
 
+const featuredLesson = lessons[0]
+const moreLessons = lessons.slice(1)
+
 export default function App() {
   const [view, setView] = useState<View>('hub')
-  const [activeLessonId, setActiveLessonId] = useState(lessons[0]?.id ?? '')
+  const [activeLessonId, setActiveLessonId] = useState(moreLessons[0]?.id ?? '')
   const backRef = useRef<HTMLButtonElement>(null)
   const lessonTitleId = useId()
 
-  const activeLesson = lessons.find((item) => item.id === activeLessonId) ?? lessons[0]
+  const activeLesson = moreLessons.find((item) => item.id === activeLessonId) ?? moreLessons[0]
 
   useEffect(() => {
     if (view !== 'lesson') return
@@ -55,8 +58,8 @@ export default function App() {
           </p>
           <h1 className="hero__headline">Calm lessons. Clear career notices.</h1>
           <p className="hero__lede">
-            A lightweight demo hub powered by Abol Kit — three captioned lessons with ASL companion
-            tracks, accessible job notices, no accounts.
+            A lightweight demo hub powered by Abol Kit — a featured captioned lesson with ASL
+            companion tracks, more resources on demand, accessible job notices, no accounts.
           </p>
           <div className="hero__cta">
             <a className="button" href="#learn">
@@ -69,30 +72,45 @@ export default function App() {
           <div className="section__intro">
             <h2 id="learn-heading">Learn</h2>
             <p>
-              Resource list → lesson detail. Each player requests captions from the Abol Kit API and
-              offers a sign-language window.
+              One featured lesson on this page. More resources stay collapsed until you open them —
+              each player requests captions from the Abol Kit API and offers a sign-language window.
             </p>
           </div>
 
           {view === 'hub' ? (
-            <ul className="resource-list">
-              {lessons.map((item) => (
-                <li key={item.id}>
-                  <button
-                    type="button"
-                    className="resource-link"
-                    onClick={() => openLesson(item.id)}
-                    aria-describedby={`${item.id}-blurb`}
-                  >
-                    <span className="resource-link__meta">{item.resourceLabel}</span>
-                    <span className="resource-link__title">{item.title}</span>
-                    <span className="resource-link__blurb" id={`${item.id}-blurb`}>
-                      {item.blurb}
-                    </span>
-                  </button>
-                </li>
-              ))}
-            </ul>
+            <div className="learn-hub">
+              {featuredLesson && (
+                <div className="learn-hub__featured" role="region" aria-label="Featured lesson">
+                  <LessonPlayer lesson={featuredLesson} />
+                </div>
+              )}
+
+              {moreLessons.length > 0 && (
+                <details className="more-lessons">
+                  <summary className="more-lessons__summary">
+                    More lessons <span aria-hidden="true">({moreLessons.length})</span>
+                  </summary>
+                  <ul className="resource-list">
+                    {moreLessons.map((item) => (
+                      <li key={item.id}>
+                        <button
+                          type="button"
+                          className="resource-link"
+                          onClick={() => openLesson(item.id)}
+                          aria-describedby={`${item.id}-blurb`}
+                        >
+                          <span className="resource-link__meta">{item.resourceLabel}</span>
+                          <span className="resource-link__title">{item.title}</span>
+                          <span className="resource-link__blurb" id={`${item.id}-blurb`}>
+                            {item.blurb}
+                          </span>
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              )}
+            </div>
           ) : (
             activeLesson && (
               <div className="lesson-detail" role="region" aria-labelledby={lessonTitleId}>
@@ -102,7 +120,7 @@ export default function App() {
                   className="back-link"
                   onClick={() => setView('hub')}
                 >
-                  ← All resources
+                  ← Back to Learn
                 </button>
                 <span id={lessonTitleId} className="visually-hidden">
                   {activeLesson.title}
@@ -117,8 +135,8 @@ export default function App() {
           <div className="section__intro">
             <h2 id="jobs-heading">Jobs</h2>
             <p>
-              Career notices as schema.org JobPosting cards — apply, listen to an audio summary, and
-              read structured details.
+              Career notices as schema.org JobPosting cards — apply, listen to an audio summary from
+              the Abol API, and read structured details.
             </p>
           </div>
           <JobsBoard />
