@@ -1,0 +1,35 @@
+{
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  "@id": "abol-learn:learning-content",
+  "title": "Learning Content Producer",
+  "abolSummaryText": "Learning Content Producer is a contractor role with Abol Learn Studio in Nairobi, Kenya. Pay is 45 USD per hour; apply by 15 January 2027.",
+  "abolAudioSummary": "/audio/learning-content.mp3",
+  "description": "Turn short technical explainers into calm, captioned lessons.\n\nYou will:\n- Brief video clips and write plain-language summaries\n- Keep resource lists easy to scan on mobile\n- Coordinate caption review for English and Ethiopian languages\n\nNice to have: experience with curriculum writing or community learning programs.",
+  "datePosted": "2026-11-05",
+  "validThrough": "2027-01-15",
+  "employmentType": "CONTRACTOR",
+  "hiringOrganization": {
+    "@type": "Organization",
+    "name": "Abol Learn Studio",
+    "sameAs": "https://abolkit.vercel.app/"
+  },
+  "jobLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Nairobi",
+      "addressCountry": "KE"
+    }
+  },
+  "baseSalary": {
+    "@type": "MonetaryAmount",
+    "currency": "USD",
+    "value": {
+      "@type": "QuantitativeValue",
+      "value": 45,
+      "unitText": "HOUR"
+    }
+  },
+  "url": "https://example.org/jobs/learning-content"
+}

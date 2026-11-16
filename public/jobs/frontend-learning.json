@@ -1,0 +1,36 @@
+{
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  "@id": "abol-learn:frontend-learning",
+  "title": "Frontend Engineer — Learning Platforms",
+  "abolSummaryText": "Frontend Engineer — Learning Platforms is a full-time role with Abol Learn Studio in Lagos, Nigeria. Pay is 32,000–48,000 USD per year; apply by 1 February 2027.",
+  "abolAudioSummary": "/audio/frontend-learning.mp3",
+  "description": "Build calm, accessible learning surfaces with React and Abol Kit embeds.\n\nYou will:\n- Own the Learn hub UI and theme job notices with host CSS variables\n- Keep mobile paths crisp and keyboard-friendly\n- Integrate caption and audio-summary APIs without inventing undocumented attributes\n\nNice to have: React 19 custom-element experience and an eye for typography.",
+  "datePosted": "2026-11-10",
+  "validThrough": "2027-02-01",
+  "employmentType": "FULL_TIME",
+  "hiringOrganization": {
+    "@type": "Organization",
+    "name": "Abol Learn Studio",
+    "sameAs": "https://abolkit.vercel.app/"
+  },
+  "jobLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Lagos",
+      "addressCountry": "NG"
+    }
+  },
+  "baseSalary": {
+    "@type": "MonetaryAmount",
+    "currency": "USD",
+    "value": {
+      "@type": "QuantitativeValue",
+      "minValue": 32000,
+      "maxValue": 48000,
+      "unitText": "YEAR"
+    }
+  },
+  "url": "https://example.org/jobs/frontend-learning"
+}

@@ -1,0 +1,40 @@
+{
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  "@id": "abol-learn:junior-a11y",
+  "title": "Junior Accessibility Engineer",
+  "abolSummaryText": "Junior Accessibility Engineer is a full-time role with Abol Learn Studio in Addis Ababa, Ethiopia. Pay is 18,000–28,000 USD per year; apply by 31 December 2026.",
+  "abolAudioSummary": "/audio/junior-a11y.mp3",
+  "description": "Help teams ship captions, keyboard paths, and clear learning tools.\n\nYou will:\n- Test Abol Kit player and job-card embeds for keyboard and screen-reader paths\n- File clear accessibility bugs with reproduction steps\n- Pair with educators on inclusive media and caption workflows\n\nNice to have: basic HTML/CSS, interest in Ethiopian language captions, and comfort writing plain-language notes.",
+  "datePosted": "2026-11-01",
+  "validThrough": "2026-12-31",
+  "employmentType": "FULL_TIME",
+  "hiringOrganization": {
+    "@type": "Organization",
+    "name": "Abol Learn Studio",
+    "sameAs": "https://abolkit.vercel.app/"
+  },
+  "jobLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Addis Ababa",
+      "addressCountry": "ET"
+    }
+  },
+  "applicantLocationRequirements": {
+    "@type": "Country",
+    "name": "Remote (Africa-friendly hours)"
+  },
+  "baseSalary": {
+    "@type": "MonetaryAmount",
+    "currency": "USD",
+    "value": {
+      "@type": "QuantitativeValue",
+      "minValue": 18000,
+      "maxValue": 28000,
+      "unitText": "YEAR"
+    }
+  },
+  "url": "https://example.org/jobs/junior-a11y"
+}
